@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View, ImageBackground, TouchableOpacity } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View, ImageBackground, TouchableOpacity, TextInput } from 'react-native';
 
 export default function App() {
   return (
@@ -21,6 +21,11 @@ export default function App() {
               </Text>
             </View>
             <View style={styles.signUpContainer}>
+              <TextInput
+                style={styles.emailInput}
+                value = "Your email address"
+              >
+              </TextInput>
               <TouchableOpacity style={styles.signUp}>
                 <Text style={styles.signUpText}>Sign up </Text>
               </TouchableOpacity>
@@ -100,6 +105,22 @@ const styles = StyleSheet.create({
     fontSize: 28
   },
 
+  emailInput: 
+  {
+    borderWidth: 3, 
+    borderRadius: 17, 
+    borderColor: "black", 
+    width: "90%", 
+    height: 60, 
+    marginLeft: "5%", 
+    marginRight: "5%", 
+    marginBottom: 20,
+    paddingLeft: "10%", 
+    paddingRight: "10%",
+    textAlign: "center",
+    fontSize: 18, 
+    backgroundColor: "white"
+  },
 
   bodyText: 
   {
