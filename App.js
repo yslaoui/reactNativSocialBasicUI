@@ -1,5 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View, ImageBackground, TouchableOpacity, TextInput } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, 
+         View, ImageBackground, TouchableOpacity, 
+         TextInput, Switch, 
+         KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
 export default function App() {
   return (
@@ -26,6 +29,14 @@ export default function App() {
                 value = "Your email address"
               >
               </TextInput>
+              <View style={styles.newsLetterContainer}>
+                  <View>
+                    <Switch></Switch>
+                  </View>
+                  <View style={styles.newsLetterGrow}>
+                    <Text style={styles.newsLetterText}>Sign up to our newsletter to hear the latest news before anyone else</Text>
+                  </View>
+              </View>
               <TouchableOpacity style={styles.signUp}>
                 <Text style={styles.signUpText}>Sign up </Text>
               </TouchableOpacity>
@@ -39,6 +50,7 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  // Overall container
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -57,9 +69,11 @@ const styles = StyleSheet.create({
     justifyContent: "center"
 
   },
+
+  // Welcome text View
   welcomeTextContainer : 
   {
-    backgroundColor: "red", 
+    // backgroundColor: "red", 
     flex: 1,
     justifyContent: "flex-end", 
     paddingLeft: "10%",
@@ -70,18 +84,65 @@ const styles = StyleSheet.create({
     fontSize: 55, 
     fontWeight: "bold"
   },  
+
+  // Body text View
   bodyTextContainer: 
   {
-    backgroundColor: "yellow", 
+    // backgroundColor: "yellow", 
     paddingTop: 20, 
     paddingBottom: "20%", 
     paddingLeft: "10%",
     paddingRight: "10%" 
   },
+  bodyText: 
+  {
+    fontSize: 17
+  },
+
+  // Email Input
+  emailInput: 
+  {
+    borderWidth: 3, 
+    borderRadius: 17, 
+    borderColor: "black", 
+    width: "90%", 
+    height: 60, 
+    marginLeft: "5%", 
+    marginRight: "5%", 
+    marginBottom: 20,
+    paddingLeft: "10%", 
+    paddingRight: "10%",
+    textAlign: "center",
+    fontSize: 18, 
+    backgroundColor: "white"
+  },
+
+  // newsletter sign in 
+  newsLetterContainer: 
+  {
+    flexDirection: 'row', 
+    width: "90%",
+    paddingLeft: "5%",
+    paddingBottom: "5%",
+
+
+  },
+  newsLetterGrow: 
+  {
+    flexGrow: 1, 
+    flex: 1 // This is a bug fix
+  },
+
+  newsLetterText: 
+  {
+    paddingLeft: 15
+  },
+
+  // sign up
 
   signUpContainer: 
   {
-    backgroundColor: "blue", 
+    // backgroundColor: "blue", 
     paddingTop: "10%", 
     justifyContent: "flex-end", 
   }, 
@@ -103,28 +164,6 @@ const styles = StyleSheet.create({
     color: "white", 
     fontWeight: "bold", 
     fontSize: 28
-  },
-
-  emailInput: 
-  {
-    borderWidth: 3, 
-    borderRadius: 17, 
-    borderColor: "black", 
-    width: "90%", 
-    height: 60, 
-    marginLeft: "5%", 
-    marginRight: "5%", 
-    marginBottom: 20,
-    paddingLeft: "10%", 
-    paddingRight: "10%",
-    textAlign: "center",
-    fontSize: 18, 
-    backgroundColor: "white"
-  },
-
-  bodyText: 
-  {
-    fontSize: 17
-  }  
+  }
 
 });
