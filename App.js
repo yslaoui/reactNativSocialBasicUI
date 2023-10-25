@@ -11,7 +11,7 @@ export default function App() {
   const [email, setEmail] = useState('');
   return (
     <View style={styles.container}>
-      <Text>Made with ❤ By Yassine SLAOUI</Text>
+      <Text>Made with ❤ by @Cabrero</Text>
       <ImageBackground source={require('./assets/background.jpeg')} resizeMode="cover" style={styles.image}>
         <KeyboardAvoidingView
           style={styles.container}
