@@ -4,44 +4,57 @@ import { SafeAreaView, StyleSheet, Text,
          TextInput, Switch, 
          KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
+import React, { useState } from 'react';
+
 export default function App() {
+
+  const [email, setEmail] = useState('');
   return (
     <View style={styles.container}>
       <Text>Hozsddsqdsq</Text>
       <ImageBackground source={require('./assets/background.jpeg')} resizeMode="cover" style={styles.image}>
-        <SafeAreaView style={styles.SafeAreaView}>
-            <View style={styles.welcomeTextContainer}>
-              <Text style={styles.welcomeText}>Welcome to social 👋 </Text>
-            </View>
-            <View style={styles.bodyTextContainer}>
-              <Text style={styles.bodyText}>
-                At social we believe in a new type of interaction.
-                {"\n"} {"\n"}
-                One that crosses the boundaries of what was possible before.
-                {"\n"} {"\n"}
-                Sign up today and check out the future of social networking.
-                {"\n"} {"\n"} 
-              </Text>
-            </View>
-            <View style={styles.signUpContainer}>
-              <TextInput
-                style={styles.emailInput}
-                value = "Your email address"
-              >
-              </TextInput>
-              <View style={styles.newsLetterContainer}>
-                  <View>
-                    <Switch></Switch>
+        <KeyboardAvoidingView
+          style={styles.container}
+          behavior={Platform.OS === 'android' ? 'height' : 'padding'}
+          >
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+
+            <SafeAreaView style={styles.SafeAreaView}>
+                <View style={styles.welcomeTextContainer}>
+                  <Text style={styles.welcomeText}>Welcome to social 👋 </Text>
+                </View>
+                <View style={styles.bodyTextContainer}>
+                  <Text style={styles.bodyText}>
+                    At social we believe in  a new type of interaction.
+                    {"\n"} {"\n"}
+                    One that crosses the boundaries of what was possible before.
+                    {"\n"} {"\n"}
+                    Sign up today and check out the future of social networking.
+                    {"\n"} {"\n"} 
+                  </Text>
+                </View>
+                <View style={styles.signUpContainer}>
+                  <TextInput
+                    style={styles.emailInput}
+                    value = {email}
+                    onChangeText = {setEmail}
+                  >
+                  </TextInput>
+                  <View style={styles.newsLetterContainer}>
+                      <View>
+                        <Switch></Switch>
+                      </View>
+                      <View style={styles.newsLetterGrow}>
+                        <Text style={styles.newsLetterText}>Sign up to our newsletter to hear the latest news before anyone else</Text>
+                      </View>
                   </View>
-                  <View style={styles.newsLetterGrow}>
-                    <Text style={styles.newsLetterText}>Sign up to our newsletter to hear the latest news before anyone else</Text>
-                  </View>
-              </View>
-              <TouchableOpacity style={styles.signUp}>
-                <Text style={styles.signUpText}>Sign up </Text>
-              </TouchableOpacity>
-            </View>
-        </SafeAreaView>
+                  <TouchableOpacity style={styles.signUp}>
+                    <Text style={styles.signUpText}>Sign up </Text>
+                  </TouchableOpacity>
+                </View>
+            </SafeAreaView>
+            </TouchableWithoutFeedback>
+        </KeyboardAvoidingView>
       </ImageBackground>
       
       <StatusBar style="auto" />
@@ -53,7 +66,7 @@ const styles = StyleSheet.create({
   // Overall container
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
