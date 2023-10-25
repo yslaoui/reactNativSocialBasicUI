@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View, ImageBackground, TouchableOpacity } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hozsdq</Text>
+      <Text>Hozsddsqdsq</Text>
       <ImageBackground source={require('./assets/background.jpeg')} resizeMode="cover" style={styles.image}>
         <SafeAreaView style={styles.SafeAreaView}>
             <View style={styles.welcomeTextContainer}>
@@ -20,7 +20,11 @@ export default function App() {
                 {"\n"} {"\n"} 
               </Text>
             </View>
-            <View style={styles.signUpContainer}></View>
+            <View style={styles.signUpContainer}>
+              <TouchableOpacity style={styles.signUp}>
+                <Text style={styles.signUpText}>Sign up </Text>
+              </TouchableOpacity>
+            </View>
         </SafeAreaView>
       </ImageBackground>
       
@@ -69,12 +73,34 @@ const styles = StyleSheet.create({
     paddingLeft: "10%",
     paddingRight: "10%" 
   },
+
   signUpContainer: 
   {
     backgroundColor: "blue", 
     paddingTop: "10%", 
     justifyContent: "flex-end", 
   }, 
+  signUp: 
+  {
+    width: "90%", 
+    height: 70, 
+    borderRadius: 35, 
+    marginLeft: "5%", 
+    marginBottom: 10, 
+    backgroundColor: "black", 
+    alignItems: "center",
+    textAlign: "center",
+    justifyContent: "center"
+  },  
+  signUpText: 
+  {
+    textAlign: "center",
+    color: "white", 
+    fontWeight: "bold", 
+    fontSize: 28
+  },
+
+
   bodyText: 
   {
     fontSize: 17
