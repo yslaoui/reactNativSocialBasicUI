@@ -4,10 +4,23 @@ import { SafeAreaView, StyleSheet, Text, View, ImageBackground } from 'react-nat
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>yassinOUWxsxs</Text>
+      <Text>Hozsdq</Text>
       <ImageBackground source={require('./assets/background.jpeg')} resizeMode="cover" style={styles.image}>
         <SafeAreaView style={styles.SafeAreaView}>
-
+            <View style={styles.welcomeTextContainer}>
+              <Text style={styles.welcomeText}>Welcome to social 👋 </Text>
+            </View>
+            <View style={styles.bodyTextContainer}>
+              <Text style={styles.bodyText}>
+                At social we believe in a new type of interaction.
+                {"\n"} {"\n"}
+                One that crosses the boundaries of what was possible before.
+                {"\n"} {"\n"}
+                Sign up today and check out the future of social networking.
+                {"\n"} {"\n"} 
+              </Text>
+            </View>
+            <View style={styles.signUpContainer}></View>
         </SafeAreaView>
       </ImageBackground>
       
@@ -34,5 +47,37 @@ const styles = StyleSheet.create({
     height: "100%", 
     justifyContent: "center"
 
-  }
+  },
+  welcomeTextContainer : 
+  {
+    backgroundColor: "red", 
+    flex: 1,
+    justifyContent: "flex-end", 
+    paddingLeft: "10%",
+    paddingRight: "10%" 
+  }, 
+  welcomeText: 
+  {
+    fontSize: 55, 
+    fontWeight: "bold"
+  },  
+  bodyTextContainer: 
+  {
+    backgroundColor: "yellow", 
+    paddingTop: 20, 
+    paddingBottom: "20%", 
+    paddingLeft: "10%",
+    paddingRight: "10%" 
+  },
+  signUpContainer: 
+  {
+    backgroundColor: "blue", 
+    paddingTop: "10%", 
+    justifyContent: "flex-end", 
+  }, 
+  bodyText: 
+  {
+    fontSize: 17
+  }  
+
 });
