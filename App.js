@@ -1,10 +1,25 @@
+// IMPORTS
+
 import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaView, StyleSheet, Text, 
          View, ImageBackground, TouchableOpacity, 
          TextInput, Switch, 
          KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard } from 'react-native';
-
 import React, { useState } from 'react';
+
+// CUSTOM COMPONENTS
+const HomeScreen = () => 
+{
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+    </View>
+  )
+  
+}
+
 
 export default function App() {
 
