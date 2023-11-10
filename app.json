@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "hackIt_BasicUI",
-    "slug": "hackIt_BasicUI",
+    "name": "navigationBasics",
+    "slug": "navigationBasics",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
